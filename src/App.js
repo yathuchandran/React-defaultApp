@@ -1,12 +1,19 @@
-// import './App.css'
-import Header from './components/header'
-
+ 
+import { useState } from "react";
+import Counter from './Counter'
 function App() {
-  const data ='Yatheesh'
+  const [count,setCount]=useState(0)
+
+  
+  const addCount=()=>{
+    setCount(count+1)
+  }
     return (
-      <div>
-        <Header data={data}/>
-      <p> this is sample {data}</p>
+      <div className='App'>
+        <button onClick={addCount}> add</button>
+        <Counter  title='1st Counter' count={count} />
+        <Counter  title='2nd Counter' count={count} />
+
       </div>
     );  
 }
