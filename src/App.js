@@ -1,6 +1,11 @@
  
+// import Counter from './Counter'
 import { useState } from "react";
-import Counter from './Counter'
+import {  } from "./Employee";
+
+import Employee from "./Employee";
+
+
 function App() {
   const [count,setCount]=useState(0)
 
@@ -8,17 +13,20 @@ function App() {
   const addCount=()=>{
     setCount(count+1)
   }
-    let obj={
-      title:'1st counter',
-      count
-    }
+    let emp =[{name:'nk' , age:14},
+    {name:"steev",age:32},
+    {name:'yathu',age:21}]
     return (
       <div className='App'>
         <button onClick={addCount}> add</button>
-        <Counter  {...obj} />
-        <Counter  title='2nd Counter' count={obj.count} />
+{
+  emp.map((obj,index)=>{
+    return (
+      <Employee key={index} {...obj} />
+    )
 
-      </div>
+  })
+}     </div>
     );  
 }
 
