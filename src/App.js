@@ -16,7 +16,7 @@ function App() {
       <div className='App'>
         <button onClick={addCount}> add</button>
         <Counter  {...obj} />
-        <Counter  title='2nd Counter' count={count} />
+        <Counter  title='2nd Counter' count={obj.count} />
 
       </div>
     );  
